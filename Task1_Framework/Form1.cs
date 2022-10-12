@@ -12,7 +12,6 @@ namespace Task1_Framework
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show($"Hello, {textBox1.Text}");
             MessageBox.Show(Lib.OutPutLogic(textBox1.Text));
         }
     }
