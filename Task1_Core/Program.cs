@@ -9,7 +9,15 @@ namespace Task1_Core
         {
             Console.WriteLine("Enter username:");
             string userName = Console.ReadLine();
-            Console.WriteLine(Lib.OutPutLogic(userName));
+            try
+            {
+                Console.WriteLine($"First letter of name is : {userName[0]}");
+                Console.WriteLine(Lib.OutPutLogic(userName));
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine("String is empty", e.Message);
+            }
         }
     }
 }
