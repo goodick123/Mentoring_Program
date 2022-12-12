@@ -1,9 +1,9 @@
 ﻿
 namespace UnitTesting
 {
-    public class CircularPrimes
+    public static class CircularPrimes
     {
-        public int GetCircularPrimes(int num)
+        public static int GetCircularPrimes(int num)
         {
             var count = 0;
 
@@ -16,7 +16,7 @@ namespace UnitTesting
                 return count;
         }
 
-        private bool IsPrime(int n)
+        private static bool IsPrime(int n)
         {
             if (n <= 1)
                 return false;
@@ -26,14 +26,14 @@ namespace UnitTesting
             if (n % 2 == 0 || n % 3 == 0)
                 return false;
 
-            for (int i = 5; i * i <= n; i = i + 6)
+            for (int i = 5; i * i <= n; i += 6)
                 if (n % i == 0 || n % (i + 2) == 0)
                     return false;
 
             return true;
         }
         
-        private bool CheckCircular(int N)
+        private static bool CheckCircular(int N)
         {
             int count = 0, temp = N;
             while (temp > 0)
