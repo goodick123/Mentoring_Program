@@ -1,20 +1,25 @@
 ﻿
+using UnitTesting.Dto;
+using UnitTesting.Interface;
+
 namespace UnitTesting
 {
-    public static class CalcStats
+    public class CalcStat : ICalcStats
     {
-        public static int[] CalcStatsData(int[] input)
+        public CalcStatsDto CalcStatsData(int[] input)
         {
-            var result = new int[4];
-            result[0] = MinNumber(input);
-            result[1] = MaxNumber(input);
-            result[2] = CountNumber(input);
-            result[3] = AverageNumber(input);
+            if(input.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            var result = new CalcStatsDto() { MinNumber = MinNumber(input), MaxNumber = MaxNumber(input), 
+                CountNumber = CountNumber(input), AverageNumber = AverageNumber(input) };
 
             return result;
         }
 
-        private static int MinNumber(int[] input)
+        public int MinNumber(int[] input)
         {
             var list = input.ToList();
 
@@ -38,7 +43,7 @@ namespace UnitTesting
             return result.Value;
         }
 
-        private static int MaxNumber(int[] input)
+        public int MaxNumber(int[] input)
         {
             var list = input.ToList();
 
@@ -62,7 +67,7 @@ namespace UnitTesting
             return result.Value;
         }
 
-        private static int CountNumber(int[] input)
+        public int CountNumber(int[] input)
         {
             var list = input.ToList();
 
@@ -76,7 +81,7 @@ namespace UnitTesting
             return result;
         }
 
-        private static int AverageNumber(int[] input)
+        public int AverageNumber(int[] input)
         {
             var list = input.ToList();
 

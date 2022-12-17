@@ -18,12 +18,13 @@ namespace UnitTesting
                 Console.WriteLine("Circular primes kata");
                 Console.WriteLine("Enter number");
 
+                var circularPrime = new CircularPrime();
                 var num = Console.ReadLine();
                 int parseNum;
 
                 if (int.TryParse(num, out parseNum))
                 {
-                    Console.WriteLine("Sum of all prime numbers: " + CircularPrimes.GetCircularPrimes(parseNum));
+                    Console.WriteLine("Sum of all prime numbers: " + circularPrime.GetCircularPrimes(parseNum));
                 }
                 else
                 {
@@ -38,6 +39,7 @@ namespace UnitTesting
                 Console.WriteLine("Enter number of digits");
 
                 var countDigits = Console.ReadLine();
+                var calcStats = new CalcStat();
 
                 if (int.TryParse(countDigits, out int parseCount))
                 {
@@ -48,10 +50,10 @@ namespace UnitTesting
                         numbers[j] = Convert.ToInt32(Console.ReadLine());
                     }
 
-                    Console.WriteLine("Minimum value: " + CalcStats.CalcStatsData(numbers)[0]);
-                    Console.WriteLine("Maximum value: " + CalcStats.CalcStatsData(numbers)[1]);
-                    Console.WriteLine("Number of elements in the sequence: " + CalcStats.CalcStatsData(numbers)[2]);
-                    Console.WriteLine("Average value: " + CalcStats.CalcStatsData(numbers)[3]);
+                    Console.WriteLine("Minimum value: " + calcStats.CalcStatsData(numbers).MinNumber);
+                    Console.WriteLine("Maximum value: " + calcStats.CalcStatsData(numbers).MaxNumber);
+                    Console.WriteLine("Number of elements in the sequence: " + calcStats.CalcStatsData(numbers).CountNumber);
+                    Console.WriteLine("Average value: " + calcStats.CalcStatsData(numbers).AverageNumber);
 
                 }
                 else
@@ -63,11 +65,14 @@ namespace UnitTesting
             {
                 Console.WriteLine("Leap Year Kata");
                 Console.WriteLine("Enter Year");
+
+                var leapYear = new LeapYear();
                 var year = Console.ReadLine();
                 int parseYear;
+
                 if (int.TryParse(year, out parseYear))
                 {
-                    var result = LeapYears.Leap(parseYear) ? "Leap year" : "Not a leap year";
+                    var result = leapYear.Leap(parseYear) ? "Leap year" : "Not a leap year";
 
                     Console.WriteLine(result);
                 }
