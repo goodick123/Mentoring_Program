@@ -1,0 +1,4 @@
+ArmorParam:20
+DamageAmplificationParam:10
+HeroDescriptionParam:enemy
+UpdatedTimeParam:00:00:00
