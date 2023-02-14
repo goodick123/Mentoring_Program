@@ -1,0 +1,1 @@
+﻿DELETE FROM Orders WHERE Id = @id;
