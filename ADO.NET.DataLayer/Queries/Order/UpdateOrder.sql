@@ -1,1 +1,0 @@
-﻿UPDATE Orders SET Status=@Status, UpdateDate=@UpdateDate, ProductId=@ProductId WHERE Id=@Id;
